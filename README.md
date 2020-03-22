@@ -8,8 +8,6 @@ If you poke me I might do something about that.
 
 Mostly what I'm trying to achieve with live coding is efficiency, flexibility, minimal cognitive overhead, and easy memorisation (both cognitive and embodied).
 
----
-
 ## Overview
 - Three main Haskell files: 
     + `Boot.hs`: the main entry point.
@@ -38,21 +36,16 @@ Mostly what I'm trying to achieve with live coding is efficiency, flexibility, m
 - `Bitwig/BitwigAPI.hs` (experimental)
 - Other experiments
 
----
-
 ## Setup
 - Set the absolute paths in `Boot.hs`, `Targets.hs` and `Lib.hs`
 - Run `:script /path/to/Boot.hs` when booting Tidal (this will depend on your editor)
 
----
-
 ## Customisation
 - Comment out what you do/don't want inside `Boot.hs`, `Targets.hs` and `Lib.hs`
-
----
 
 ## Questions/comments
 - Why isn't this "proper Haskell/SuperCollider code/modules"? I'm lazy, and this works fine!
 - Contact here or Twitter (`@jdkarmitage`).
 
----
+## Buy Me A Coffee
+- Merci! https://www.buymeacoffee.com/jarmitage
