@@ -1,0 +1,3 @@
+-- livecore
+-- liveCoreTarget = OSCTarget {oName = "LiveCore", oAddress = "127.0.0.1", oPort = 10000, oPath = "/livecore", oShape = Nothing, oLatency = 0.02, oPreamble = [], oTimestamp = MessageStamp}
+-- tidal <- startMulti [superdirtTarget {oLatency = 0.1, oAddress = "127.0.0.1", oPort = 57120}, liveCoreTarget] (defaultConfig {cFrameTimespan = 1/20})

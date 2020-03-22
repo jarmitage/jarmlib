@@ -1,0 +1,2 @@
+-- bela
+-- tidal <- startTidal (superdirtTarget {oLatency = 0.5}) (defaultConfig {cCtrlAddr = \"192.168.7.1\", cCtrlPort = 6020})

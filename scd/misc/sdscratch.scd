@@ -1,0 +1,1 @@
+~dirt.loadSoundFiles("/path/to/samples/scratch/*");
