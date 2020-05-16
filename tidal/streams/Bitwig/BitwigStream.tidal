@@ -1,0 +1,72 @@
+b 1 -- transport
+  -- $ s "bd"
+  $ transport "play"
+  -- $ tempo "120"
+
+b 1 silence
+
+---
+
+b 1 -- track
+  -- $ s "bd"
+  -- $ trackadd "effect"
+  -- $ trackactivate 0 0
+  -- $ trackselect 0
+  -- $ trackvol "[0 1 2 3]" "0"
+  -- $ trackvol' "[0]" (+) "[0 1 2 3]"
+  -- $ trackpan "0" "1"
+  $ trackpan' "0" (+) "0 0.5 1"
+  -- $ trackstate 0 "mute" "0"
+  -- $ trackstate' 0 (#) "mute" (#) "0"
+  -- $ _trackstate 1 # trackstateprop "mute" # trackstatepropval "0"
+  -- $ tracksendvol 0 0 1
+  -- $ tracksendvol' 0 (#) "[4 5 6]" (+) "[0 1 2 3]"
+  -- $ trackclip 0 0 "launch"
+  -- $ trackclip' "[0, 1, 2, 3]" (#) 0 (#) "launch"
+
+b 1 silence
+
+---
+
+b 1 -- master
+  -- $ s "bd"
+  -- $ mastervol "1"
+  -- $ masterpan "0"
+  -- $ master 1 0
+
+b 1 silence
+
+---
+
+b 1 -- scene
+  -- $ s "bd"
+  -- $ scenelaunch 1
+  -- $ scene 1
+  -- $ _scenecreate "create"
+  $ scenecreate
+
+b 1 silence
+
+---
+
+b 1 -- user
+  -- $ s "bd"
+  -- $ userp 0 1
+  $ userp' 0 (+) "[0 1 2 3]"
+
+b 1 silence
+
+---
+
+b 1 -- vkb
+  -- $ s "bd"
+  -- $ vkbn   0 0 120
+  -- $ vkbcc  0 0 120
+  -- $ vkbat  0 0 120
+  -- $ vkbpb  0 120
+  -- $ vkbn'  0 (#) 0 (+) "[80 100 120]"
+  -- $ vkbcc' 0 (#) 0 (+) "[80 100 120]"
+  -- $ vkbat' 0 (#) 0 (+) "[80 100 120]"
+  $ vkbpb' 0 (+) "[80 100 120]"
+
+b 1 silence
