@@ -1,0 +1,131 @@
+-- Transport (using once)
+
+bwplay -- bwp
+
+bwstop -- bws / bwhush
+
+hush' -- hushh / shh (global hush / hush tidal & stop bitwig)
+
+bwbpm 120 -- bwtempo
+
+bwbpm' "120 130" -- patternable bwtempo
+
+---
+
+p 1 -- master
+  -- $ s "bd"
+  -- $ bwmv 1 -- master volume
+  -- $ bwmp 1 -- master pan
+  -- $ bwm 1 1
+  -- $ bwm' 1 (+) 1
+
+p 1 -- scene
+  -- $ s "bd"
+  -- $ bwsc 1 -- launch scene 1
+  -- $ bwscc -- create scene
+
+p 1 -- track
+  -- $ s "bd"
+  -- $ bwtadd "effect" -- track add
+  -- $ bwtact 0 1     -- track active state
+  -- $ bwtv  0 1      -- track volume
+  -- $ bwtp  0 1      -- track pan
+  -- $ bwtst          -- track stop (all)
+  -- $ bwtm  0        -- track mute
+  -- $ btwum 0        -- track unmute
+  -- $ bwts  0        -- track solo
+  -- $ bwtus 0        -- track unsolo
+  -- $ bwtr  0        -- track record arm
+  -- $ bwtur 0        -- track unrecord arm
+  -- $ bwtsv 0 0 1    -- track send volume
+  -- $ bwtv' 0 (+) "0 0.5 1"
+  -- $ bwtp' 0 (+) "0 0.5 1"
+  -- $ bwtsv' 0 (#) 0 (+) "0 0.5 1"
+  -- $ bwtact 0 "0 1"
+
+p 1 -- clip
+  -- $ s "bd"
+  -- $ bwc 0 0 "launch" -- clip action
+  -- $ bwc' "[0, 1, 2, 3]" (#) 0 (#) "launch"
+  -- $ bwcs "0 1 2" 0 -- clip select
+  -- $ bwcl "0 1 2" 0 -- clip launch
+  -- $ bwcr "0 1 2" 0 -- clip record
+  -- $ bwcd "0 1 2" 0 -- clip remove (delete)
+  -- $ bwch "0 1 2"   -- clip hush (stop)
+  -- $ bwca "0 1 2"   -- clip return to arrangement
+  -- $ bwcs' 0 (+) "0 1 2"
+  -- $ bwcl' 0 (+) "0 1 2"
+  -- $ bwcr' 0 (+) "0 1 2"
+  -- $ bwcd' 0 (+) "0 1 2"
+
+p 1 -- mappable params
+  -- $ s "bd"
+  -- $ bwp 0 1 -- (index, value)
+  -- $ bwp' 0 (+) "[0 1 2 3]"
+
+p 1 -- virtual MIDI keyboard
+  -- $ s "bd"
+  -- $ bwn   0 0 0.5 -- note (channel, note, velocity)
+  -- $ bwcc  0 0 0.5 -- control change (channel, value)
+  -- $ bwat  0 0 0.5 -- aftertouch (channel, note, aftertouch)
+  -- $ bwpb  0 0.5   -- pitch bend (channel, bend)
+  -- $ bwn'  0 (#) 0 (+) "[0 0.25 0.5]"
+  -- $ bwcc' 0 (#) 0 (+) "[0 0.25 0.5]"
+  -- $ bwat' 0 (#) 0 (+) "[0 0.25 0.5]"
+  -- $ bwpb' 0 (+) "[0 0.25 0.5]"
+
+-- Other transport commands (using once)
+
+bwlink 4 0.15 -- Ableton Link (beats per cycle, latency/nudge)
+
+bwrestart
+
+bwloop
+
+bwclick
+
+bwpunchin
+
+bwpunchout
+
+bwrecord -- bwrec
+
+bwoverdub
+
+-- Global commands (using once)
+
+bwpre 0 -- bwpreroll
+
+bwundo
+
+bwredo
+
+bwrefresh
+
+-- Project commands (using once)
+
+bwproject
+
+bwengine
+
+bwsave
+
+bwautosave 32 -- pattern to save every 32 cycles
+
+bwautosavestop -- stop auto saving
+
+p 1 $ bwmarker 0 -- launch playback from marker
+
+-- high-level clip launcher and mixer control with jarmlib
+
+p 1
+  -- $ s "bd"
+  -- $ heap bwtv ["0 1","1 0","0 1 0","0 0.5"] -- heap of track volumes
+  -- $ heap bwcl [1,1,1,1]                     -- heap of clip launch indexes
+  -- $ pile [bwtv, bwtp] [[1,1], [1,1]]        -- pile of track volumes and pans
+  -- $ bwvp   0 1 1                            -- track volume pan
+  -- $ bwcv   0 1 1                            -- track clip volume
+  -- $ bwcvp  0 1 1 0.5                        -- track clip volume pan
+  -- $ bwvp'  [1,1,1,1] [1,1,1,1]              -- volumes and pans (tracks 0-indexed)
+  -- $ bwcv'  [1,1,1,1] [1,1,1,1]              -- clips and volumes (tracks 0-indexed)
+  -- $ bwcvp' [1,1,1,1] [1,1,1,1] [1,1,1,1]    -- clips, volumes and pans (tracks 0-indexed)

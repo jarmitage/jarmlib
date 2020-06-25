@@ -1,12 +1,16 @@
 
 -- Example: https://gist.github.com/jarmitage/930442ae4d341d6fa4ffa48914317f55
 
+-- TODO
+-- - This file is stream dependent
+-- - Need to add example usage
+
 -- Mute/Unmute/Solo Patterns and IntPatterns
 :{
-let mutePatterns      g = mapM (streamMute   superDirt) g
-    unmutePatterns    g = mapM (streamUnmute superDirt) g
-    soloPatterns      g = mapM (streamSolo   superDirt) g
-    unsoloPatterns    g = mapM (streamUnsolo superDirt) g
+let mutePatterns      g = mapM (streamMute   stream) g
+    unmutePatterns    g = mapM (streamUnmute stream) g
+    soloPatterns      g = mapM (streamSolo   stream) g
+    unsoloPatterns    g = mapM (streamUnsolo stream) g
     mutePatterns'   s g = mutePatterns   (fromJust $ lookup g s)
     unmutePatterns' s g = unmutePatterns (fromJust $ lookup g s)
     soloPatterns'   s g = soloPatterns   (fromJust $ lookup g s)
@@ -17,10 +21,10 @@ let mutePatterns      g = mapM (streamMute   superDirt) g
 
 -- Mute/Unmute/Solo Track Patterns
 :{
-let muteTrackPatterns    t g   = mapM (streamMute   superDirt) (map ((t ++ "-") ++) g)
-    unmuteTrackPatterns  t g   = mapM (streamUnmute superDirt) (map ((t ++ "-") ++) g)
-    soloTrackPatterns    t g   = mapM (streamSolo   superDirt) (map ((t ++ "-") ++) g)
-    unsoloTrackPatterns  t g   = mapM (streamUnsolo superDirt) (map ((t ++ "-") ++) g)
+let muteTrackPatterns    t g   = mapM (streamMute   stream) (map ((t ++ "-") ++) g)
+    unmuteTrackPatterns  t g   = mapM (streamUnmute stream) (map ((t ++ "-") ++) g)
+    soloTrackPatterns    t g   = mapM (streamSolo   stream) (map ((t ++ "-") ++) g)
+    unsoloTrackPatterns  t g   = mapM (streamUnsolo stream) (map ((t ++ "-") ++) g)
     muteTrackPatterns'   t s g = muteTrackPatterns   (fromJust $ lookup (map ((t ++ "-") ++) g) s)
     unmuteTrackPatterns' t s g = unmuteTrackPatterns (fromJust $ lookup (map ((t ++ "-") ++) g) s)
     soloTrackPatterns'   t s g = soloTrackPatterns   (fromJust $ lookup (map ((t ++ "-") ++) g) s)
@@ -31,8 +35,8 @@ let muteTrackPatterns    t g   = mapM (streamMute   superDirt) (map ((t ++ "-") 
 
 -- Name patterns based on track names
 :{
-let trackPatternName track patternName = d (track ++ "-" ++ patternName)
-    trackIntPattern track patternName  = d (track ++ "-" ++ (show patternName))
+let trackPatternName track patternName = p (track ++ "-" ++ patternName)
+    trackIntPattern track patternName  = p (track ++ "-" ++ (show patternName))
 :}
 
 -- Shorthands for patterns and track patterns

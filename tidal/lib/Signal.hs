@@ -1,7 +1,9 @@
 import Control.Applicative -- `liftA2`
 
 -- TODO
--- - Test old funcs
+-- - [ ] Add segment?
+-- - [ ] Add param arg versions?
+-- - [ ] Test old funcs
 
 -- Range prime
 range' from to p = (p*to - p*from) + from -- TODO: obsolete?

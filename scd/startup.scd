@@ -32,11 +32,6 @@ s.options.device = "SuperCollider";
 // s.options.numInputBusChannels = 34;
 // s.options.device = "SuperColliderMOTUAggregate";
 
-// For simultaneously using inputs from Scarlett
-// s.options.numOutputBusChannels = 34;
-// s.options.numInputBusChannels = 34;
-// s.options.device = "SuperColliderScarlettAggregate";
-
 // boot the server and start SuperDirt
 s.waitForBoot {
 	~dirt = SuperDirt(2, s); // 2x channels per orbit (stereo pairs)
@@ -47,11 +42,6 @@ s.waitForBoot {
 	~dirt.start(57120, [0, 2, 4, 6, 8, 10, 12, 14]); // 8x stereo pairs / orbits
 	// ~dirt.start(57120, [0, 4, 8, 12, 16]); // 8x 4-way pairs / orbits
 	// ~dirt.start(57120, [0, 0, 0, 0, 0, 0, 0, 0]); // 8x 4 channel outputs / orbits (multichannel surround)
-
-	// vivid-synth
-	// ("/Users/jarm/SparkleShare/gitlab.com/tidal/lib/scd/misc/VividSynthDefs.scd").load; // args? dirtpan?
-	// SynthDef(\viv0, {|out=0, freq=440, pan=0.5| }).add;
-	// SynthDef(\viv1, {|out=0, freq=440, pan=0.5| }).add;
 
 	// Debug print OSC messages
 	// s.dumpOSC(1);

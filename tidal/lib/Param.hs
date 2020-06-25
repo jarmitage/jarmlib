@@ -6,6 +6,13 @@
 --   + SpectralTricks
 --   + Custom scsynths
 
+heap   f   p = stack $ zipWith (\i x -> f i x) (map fromInteger [0..]) p
+heap'  f i p = stack $ zipWith (\i x -> f i x) (map fromInteger [i..]) p
+heap'' f i p = stack $ zipWith (\i x -> f i x) (map fromInteger i)     p
+
+pile f p = stack $ zipWith heap f p -- same types in the pile
+pile' f f' p p' = stack [heap f p, heap f' p'] -- mixed types in a pile of 2
+
 -- FX Groups - `grp` version
 adsr    = grp [mF "attack",      mF "decay", mF "sustain", mF "release"]
 del     = grp [mF "delay",       mF "delaytime", mF "delayfeedback"]
