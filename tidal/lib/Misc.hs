@@ -12,6 +12,9 @@ screw l c p = loopAt l $ chop c $ p
 toggle t f p = if (1 == t) then f $ p else id $ p
 tog = toggle
 
+-- integer version of scale
+iscale s m = round <$> scale s (round <$> m)
+
 -- sound bank https://github.com/tidalcycles/Tidal/issues/231
 -- bank p = with s_p (liftA2 (++) (p::Pattern String))
 -- b = bank

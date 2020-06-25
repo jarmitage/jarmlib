@@ -3,7 +3,7 @@
 -- Transport OSC specs
 :{
 -- "/{bwTransport}": stop, play, playbutton, restart, repeat, click, punchIn, punchOut, record, overdub
-bwTransport = [(OSC "/{transport}" $ ArgList []),
+bwTransport = [OSC "/{transport}" $ ArgList [],
                -- (OSC "/click/volume" $ ArgList [("clickvolume", Nothing)]),-- Just $ VF 0)]), -- Not defined?
                -- (OSC "/click/preroll" $ ArgList [("clickpreroll", Nothing)]), -- {-,1} Toggles click in preroll
                -- (OSC "/overdub/launcher" $ ArgList [("overdublauncher", Nothing)]), -- {1,-}
@@ -11,7 +11,7 @@ bwTransport = [(OSC "/{transport}" $ ArgList []),
                -- (OSC "/autowrite" $ ArgList [("autowrite", Nothing)]),-- {0,1}
                -- (OSC "/autowrite/launcher" $ ArgList [("autowritelauncher", Nothing)]), -- {0,1}
                -- (OSC "/automationWriteMode"  $ ArgList [("autWriteMode", Nothing)]),--Just $ VS "latch")]),-- {latch,touch,write}
-               (OSC "/tempo/raw" $ ArgList [("raw", Nothing)])] -- {0-666}
+               OSC "/tempo/raw" $ ArgList [("raw", Nothing)]] -- {0-666}
                -- (OSC "/tempo/tap" $ ArgList [("tap", Nothing)]),
                -- (OSC "/position/{playheadscroll}" $ ArgList []), -- {+,-} Small in-/decrease of play position
                -- (OSC "/position/{playheadscrolllarge}" $ ArgList []), --{++,--} Large in-/decrease of play position
