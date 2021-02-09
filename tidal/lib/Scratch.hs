@@ -171,7 +171,7 @@ let tides_modes = "shapes amps time freqs"
     modeN "freqs"  = 3
     smode = mode . (modeN <$>)
 
-let rings_models
+let rings_models = "res symp sympq mod fm rvb"
     ringsModelN "res"   = 0 -- MODAL_RESONATOR,
     ringsModelN "symp"  = 1 -- SYMPATHETIC_STRING,
     ringsModelN "sympq" = 4 -- SYMPATHETIC_STRING_QUANTIZED,
