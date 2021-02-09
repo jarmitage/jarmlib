@@ -8,7 +8,7 @@
 import Sound.Tidal.Context
 
 -- https://github.com/ndmitchell/hoogle/blob/master/docs/Install.md
-:def hoogle (\x -> return $ ":!/Users/jarm/Library/Haskell/bin/hoogle --info "++x)
+-- :def hoogle (\x -> return $ ":!/Users/jarm/Library/Haskell/bin/hoogle --info "++x)
 
 -- :script osc/controllers/Controllers.hs
 :script osc/Targets.hs
