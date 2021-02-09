@@ -37,14 +37,13 @@ Mostly what I'm trying to achieve with live coding is efficiency, flexibility, m
 - Other experiments
 
 ## Setup
-- Set the absolute paths in `Boot.hs`, `Targets.hs` and `Lib.hs`
+- Set the absolute path in `Boot.hs`
 - Run `:script /path/to/Boot.hs` when booting Tidal (this will depend on your editor)
 
 ## Customisation
 - Comment out what you do/don't want inside `Boot.hs`, `Targets.hs` and `Lib.hs`
 
 ## Questions/comments
-- Why isn't this "proper Haskell/SuperCollider code/modules"? I'm lazy, and this works fine!
 - Contact here or Twitter (`@jdkarmitage`).
 
 ## Buy Me A Coffee
