@@ -110,72 +110,80 @@ let oscA = pF "oscA"
     verb w t d h = verbgain 1 # verbwet w # verbtime t # verbdamp d # verbhp h
 
 -- https://mutable-instruments.net/modules/braids/manual/
-let braids_models = "csaw trisaw sawsq fold comb hardsync saw3 ring saw7 sawcomb toy zf vosm vowel harm fm pluk bowd blow bell drum kick cymb wtbl wmap wlin wt4 nois twnq clkn qpsk"
-    braidsModelN "csaw"     = 0
-    braidsModelN "trisaw"   = 1
-    braidsModelN "sawsq"    = 2
-    braidsModelN "fold"     = 3
-    braidsModelN "comb"     = 4
-    braidsModelN "hardsync" = 5
-    braidsModelN "saw3"     = 6
-    braidsModelN "ring"     = 7
-    braidsModelN "saw7"     = 8
-    braidsModelN "sawcomb"  = 9
-    braidsModelN "toy"      = 10
-    braidsModelN "zf"       = 11
-    braidsModelN "vosm"     = 12
-    braidsModelN "vowel"    = 13
-    braidsModelN "harm"     = 14
-    braidsModelN "fm"       = 15
-    braidsModelN "pluk"     = 16
-    braidsModelN "bowd"     = 17
-    braidsModelN "blow"     = 18
-    braidsModelN "bell"     = 19
-    braidsModelN "drum"     = 20
-    braidsModelN "kick"     = 21
-    braidsModelN "cymb"     = 22
-    braidsModelN "wtbl"     = 23
-    braidsModelN "wmap"     = 24
-    braidsModelN "wlin"     = 25
-    braidsModelN "wt4"      = 26
-    braidsModelN "nois"     = 27
-    braidsModelN "twnq"     = 28
-    braidsModelN "clkn"     = 29
-    braidsModelN "qpsk"     = 30
-    smodel = model . (braidsModelN <$>)
+:{
+braids_models = "csaw trisaw sawsq fold comb hardsync saw3 ring saw7 sawcomb toy zf vosm vowel harm fm pluk bowd blow bell drum kick cymb wtbl wmap wlin wt4 nois twnq clkn qpsk"
+braidsModelN "csaw"     = 0
+braidsModelN "trisaw"   = 1
+braidsModelN "sawsq"    = 2
+braidsModelN "fold"     = 3
+braidsModelN "comb"     = 4
+braidsModelN "hardsync" = 5
+braidsModelN "saw3"     = 6
+braidsModelN "ring"     = 7
+braidsModelN "saw7"     = 8
+braidsModelN "sawcomb"  = 9
+braidsModelN "toy"      = 10
+braidsModelN "zf"       = 11
+braidsModelN "vosm"     = 12
+braidsModelN "vowel"    = 13
+braidsModelN "harm"     = 14
+braidsModelN "fm"       = 15
+braidsModelN "pluk"     = 16
+braidsModelN "bowd"     = 17
+braidsModelN "blow"     = 18
+braidsModelN "bell"     = 19
+braidsModelN "drum"     = 20
+braidsModelN "kick"     = 21
+braidsModelN "cymb"     = 22
+braidsModelN "wtbl"     = 23
+braidsModelN "wmap"     = 24
+braidsModelN "wlin"     = 25
+braidsModelN "wt4"      = 26
+braidsModelN "nois"     = 27
+braidsModelN "twnq"     = 28
+braidsModelN "clkn"     = 29
+braidsModelN "qpsk"     = 30
+smodel = model . (braidsModelN <$>)
+:}
 
 -- https://mutable-instruments.net/modules/plaits/manual/
-let plaits_engines = "anaosc wshape fm formant harm wtable chords vowel gran noisef noisep modal anabd anasn anahh"
-    plaitsEngineN "anaosc"  = 0
-    plaitsEngineN "wshape"  = 1
-    plaitsEngineN "fm"      = 2
-    plaitsEngineN "formant" = 3
-    plaitsEngineN "harm"    = 4
-    plaitsEngineN "wtable"  = 5 
-    plaitsEngineN "chords"  = 6
-    plaitsEngineN "vowel"   = 7
-    plaitsEngineN "gran"    = 8
-    plaitsEngineN "noisef"  = 9
-    plaitsEngineN "noisep"  = 10
-    plaitsEngineN "modal"   = 11
-    plaitsEngineN "anabd"   = 12
-    plaitsEngineN "anasn"   = 13
-    plaitsEngineN "anahh"   = 14
-    sengine = engine . (plaitsEngineN <$>)
+:{
+plaits_engines = "anaosc wshape fm formant harm wtable chords vowel gran noisef noisep modal anabd anasn anahh"
+plaitsEngineN "anaosc"  = 0
+plaitsEngineN "wshape"  = 1
+plaitsEngineN "fm"      = 2
+plaitsEngineN "formant" = 3
+plaitsEngineN "harm"    = 4
+plaitsEngineN "wtable"  = 5 
+plaitsEngineN "chords"  = 6
+plaitsEngineN "vowel"   = 7
+plaitsEngineN "gran"    = 8
+plaitsEngineN "noisef"  = 9
+plaitsEngineN "noisep"  = 10
+plaitsEngineN "modal"   = 11
+plaitsEngineN "anabd"   = 12
+plaitsEngineN "anasn"   = 13
+plaitsEngineN "anahh"   = 14
+sengine = engine . (plaitsEngineN <$>)
+:}
 
 -- https://mutable-instruments.net/modules/tides/manual/
-let tides_modes = "shapes amps time freqs"
-    modeN "shapes" = 0
-    modeN "amps"   = 1
-    modeN "times"  = 2
-    modeN "freqs"  = 3
-    smode = mode . (modeN <$>)
+:{
+tides_modes = "shapes amps time freqs"
+modeN "shapes" = 0
+modeN "amps"   = 1
+modeN "times"  = 2
+modeN "freqs"  = 3
+smode = mode . (modeN <$>)
+:}
 
-let rings_models = "res symp sympq mod fm rvb"
-    ringsModelN "res"   = 0 -- MODAL_RESONATOR,
-    ringsModelN "symp"  = 1 -- SYMPATHETIC_STRING,
-    ringsModelN "sympq" = 4 -- SYMPATHETIC_STRING_QUANTIZED,
-    ringsModelN "mod"   = 2 -- MODULATED/INHARMONIC_STRING,
-    ringsModelN "fm"    = 3 -- 2-OP_FM_VOICE,
-    ringsModelN "rvb"   = 5 -- STRING_AND_REVERB
-    ringsSmodel = ringsmodel . (ringsModelN <$>)
+:{
+rings_models = "res symp sympq mod fm rvb"
+ringsModelN "res"   = 0 -- MODAL_RESONATOR,
+ringsModelN "symp"  = 1 -- SYMPATHETIC_STRING,
+ringsModelN "sympq" = 4 -- SYMPATHETIC_STRING_QUANTIZED,
+ringsModelN "mod"   = 2 -- MODULATED/INHARMONIC_STRING,
+ringsModelN "fm"    = 3 -- 2-OP_FM_VOICE,
+ringsModelN "rvb"   = 5 -- STRING_AND_REVERB
+ringsSmodel = ringsmodel . (ringsModelN <$>)
+:}
