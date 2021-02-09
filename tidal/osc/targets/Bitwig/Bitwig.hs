@@ -22,15 +22,15 @@ bwTarget = Target {oName     = "bitwig",
 let bwO m = range 0 16384 m
 
 -- OSC paths and args
-:script /path/to/here/tidal/osc/targets/Bitwig/OSCSpecs/Global.hs
-:script /path/to/here/tidal/osc/targets/Bitwig/OSCSpecs/Project.hs
-:script /path/to/here/tidal/osc/targets/Bitwig/OSCSpecs/Transport.hs
-:script /path/to/here/tidal/osc/targets/Bitwig/OSCSpecs/Track.hs
-:script /path/to/here/tidal/osc/targets/Bitwig/OSCSpecs/TrackClip.hs
-:script /path/to/here/tidal/osc/targets/Bitwig/OSCSpecs/Master.hs
-:script /path/to/here/tidal/osc/targets/Bitwig/OSCSpecs/Scene.hs
-:script /path/to/here/tidal/osc/targets/Bitwig/OSCSpecs/User.hs
-:script /path/to/here/tidal/osc/targets/Bitwig/OSCSpecs/MIDI.hs
+:script osc/targets/Bitwig/OSCSpecs/Global.hs
+:script osc/targets/Bitwig/OSCSpecs/Project.hs
+:script osc/targets/Bitwig/OSCSpecs/Transport.hs
+:script osc/targets/Bitwig/OSCSpecs/Track.hs
+:script osc/targets/Bitwig/OSCSpecs/TrackClip.hs
+:script osc/targets/Bitwig/OSCSpecs/Master.hs
+:script osc/targets/Bitwig/OSCSpecs/Scene.hs
+:script osc/targets/Bitwig/OSCSpecs/User.hs
+:script osc/targets/Bitwig/OSCSpecs/MIDI.hs
 
 -- OSC map
 :{

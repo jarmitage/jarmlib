@@ -1,0 +1,96 @@
+{-
+  Targets (separate Reaktor instances)
+    t0-t7 send on ports 10000-10007
+-}
+
+-- Initialise sync to all 8 targets
+lcinit
+
+p1 $ note 0 
+  # t0
+  -- # t1
+  -- # t2
+  -- # t3
+  -- # t4
+  -- # t5
+  -- # t6
+  -- # t7
+
+{-
+  Messages
+-}
+
+p1 -- SAM-Nano OSC Sample Player Megakit
+  $ note 0 # kit "<old1 old2 fm1 fm2 fm3 trap1 trap2 trap3 bass bs chords stabs notes ins voxriff vox fx>" -- k
+  -- $ k0 "0 1 2 3" "<chords stabs>" -- sends `note` on notechannel kn, k0-k7
+  -- # notechannel 0 -- notech notec
+  -- # notedelay "0.1 0.5 0.8" -- notedel noted
+  -- # noteexp "0.1 0.5 0.8" -- notex
+  -- # low "0.1 0.5 0.8"
+  -- # midfreq 1e3 # midgain "0.1 0.5 0.8"
+  -- # mid 1e3 "0.1 0.5 0.8"
+  -- # high "0.1 0.5 0.8"
+  -- # lowhigh "0.1 0.5 0.8" "0.1 0.5 0.8" -- lh
+  -- # lowmid "0.1 0.5 0.8" 1e3 "0.1 0.5 0.8" -- lm
+  -- # midhigh 1e3 "0.1 0.5 0.8" "0.1 0.5 0.8" -- mh
+  -- # lowmidhigh "0.1 0.5 0.8" 1e3 "0.1 0.5 0.8" "0.1 0.5 0.8" -- lmh
+  -- # fxm "compression" # fxdepth "0.1 0.5 0.8" -- fxd
+  -- # fx "compression" "0.1 0.5 0.8" -- string version
+  -- # fxi (run 4) "0.1 0.5 0.8" -- integer version
+  -- # fx "<compression saturation distortion lofi phaser chorus tremolo exciter>" "<0.1 0.5 0.8>" -- 8 modes, aliases: comp sat dist trem
+  -- # reverbsize "0.1 0.5 0.8" # reverbdepth "0.1 0.5 0.8"
+  -- # rvbs "0.1 0.5 0.8" # rvbd "0.1 0.5 0.8"
+  -- # rvbsd "0.1 0.5 0.8" "0.1 0.5 0.8"
+  # t0
+
+p1 -- UTL-Nano OSC Note
+  $ note 0
+  # t0
+
+p1 -- UTL-Nano OSC Control
+  $ control ((r 4)/4) # controlchannel 2 -- separate
+  -- $ ctl ((r 4)/4) 2 -- combined
+  # t0
+
+p1 -- SAM-Nano OSC Sample Player (?)
+  $ iter 3 striate 8 $ chop 4
+  $ note 0 # notec 0
+  # t0
+
+p1 -- UTL-Nano OSC Matrix
+  $ mxi "0 1 2" # mxd "0.1 0.5 0.8" # mxo "2 1 0"
+  -- $ mxio "0 1 2" "2 1 0" # mxo "0.1 0.5 0.8"
+  -- $ mxido "0 1 2" "0.1 0.5 0.8" "2 1 0"
+  # t0
+
+-- UTL-Nano OSC Clock (?)
+p1 $ clock # t0
+
+{-
+  Block mappings
+-}
+
+p1 -- SEQ-Nano Position Effects
+  $ posfxm "no fast loop clip" # posfxd 0.5 -- separate, string
+  -- $ posfxm' (run 4) # posfxd 0.5 -- separate, numerical
+  -- $ posfx "no fast loop clip" 0.5 -- combined, string
+  -- $ posfx' (run 4) 0.5 -- combined, numerical
+  -- $ posfx "<no fast loop clip xdown xup rev ping pong jitter jit rand pattern pat randrev repeat rep>" 0.5 -- all modes
+  # t0
+
+{-
+  Other
+-}
+
+{-
+  Examples
+-}
+
+p1
+  $ sl 2
+  $ ev 2 rev
+  $ iter "<3 4>" . striate 4 $ chop 2
+  $ slice 16 (fa 8 $ r 4 + "<3 5 7 9>")
+  $ posfx "xdown xup rev" 0.5
+  # speed ("<-1 [0.5 -2] 1>" * 0.1)
+  # t0

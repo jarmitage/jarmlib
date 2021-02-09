@@ -1,0 +1,40 @@
+-- Wavetable Synth
+:{
+wt_ = "tune fine xpos ypos scandepth scanspeed scanmode unison detune yoffset chord scalesnap phase FM harmonics warp warpmode skipfm cutoff res filteshape filterenv filterfm att dec sus rel lpg level preset efxmode efxdepth delay time reverb size"
+wt_tune x = control x # controlchannel 0
+wt_fine x = control x # controlchannel 1
+wt_xpos x = control x # controlchannel 2
+wt_ypos x = control x # controlchannel 3
+wt_scandepth x = control x # controlchannel 4
+wt_scanspeed x = control x # controlchannel 5
+wt_scanmode x = control x # controlchannel 6
+wt_unison x = control x # controlchannel 7
+wt_detune x = control x # controlchannel 8
+wt_yoffset x = control x # controlchannel 9
+wt_chord x = control x # controlchannel 10
+wt_scalesnap x = control x # controlchannel 11
+wt_phase x = control x # controlchannel 12
+wt_FM x = control x # controlchannel 13
+wt_harmonics x = control x # controlchannel 14
+wt_warp x = control x # controlchannel 15
+wt_warpmode x = control x # controlchannel 16
+wt_skipfm x = control x # controlchannel 17
+wt_cutoff x = control x # controlchannel 18
+wt_res x = control x # controlchannel 19
+wt_filteshape x = control x # controlchannel 20
+wt_filterenv x = control x # controlchannel 21
+wt_filterfm x = control x # controlchannel 22
+wt_att x = control x # controlchannel 23
+wt_dec x = control x # controlchannel 24
+wt_sus x = control x # controlchannel 25
+wt_rel x = control x # controlchannel 26
+wt_lpg x = control x # controlchannel 27
+wt_level x = control x # controlchannel 28
+wt_preset x = control x # controlchannel 30
+wt_efxmode x = control x # controlchannel 36
+wt_efxdepth x = control x # controlchannel 37
+wt_delay x = control x # controlchannel 38
+wt_time x = control x # controlchannel 39
+wt_reverb x = control x # controlchannel 40
+wt_size x = control x # controlchannel 41
+:}

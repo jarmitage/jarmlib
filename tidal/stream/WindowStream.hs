@@ -1,4 +1,4 @@
-:script /path/to/here/tidal/osc/OSCMaps.hs
+:script /Users/jarm/SparkleShare/gitlab.com/tidal/lib/tidal/osc/OSCMaps.hs
 
 :{
 futureTarget = Target {oName     = "bitwig",

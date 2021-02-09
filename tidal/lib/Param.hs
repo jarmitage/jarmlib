@@ -6,6 +6,10 @@
 --   + SpectralTricks
 --   + Custom scsynths
 
+import Sound.Tidal.Pattern as P
+
+rangem i_min i_max o_min o_max p = (\v im ix om ox -> (v-im)*(ox-om)/(ix-im)+om) <$> p P.*> i_min P.*> i_max P.*> o_min P.*> o_max
+
 heap   f   p = stack $ zipWith (\i x -> f i x) (map fromInteger [0..]) p
 heap'  f i p = stack $ zipWith (\i x -> f i x) (map fromInteger [i..]) p
 heap'' f i p = stack $ zipWith (\i x -> f i x) (map fromInteger i)     p

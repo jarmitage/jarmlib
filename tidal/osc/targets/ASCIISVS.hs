@@ -9,7 +9,7 @@ let ascTarget = Target {oName     = "ascii",
                         oWindow   = Nothing,
                         oSchedule = Live
                        }
-    ascOSCSpecs = [OSC "/{asccolour}/speed"  $ ArgList [("ascspeed", Nothing)],
+    ascOSCSpecs = [OSC "/{asccolour}/speed"  $ ArgList [("ascspeed", Just $ VF 0)],
                    OSC "/{asccolour}/mode"   $ ArgList [("ascmode", Nothing)],
                    OSC "/{asccolour}/offset" $ ArgList [("ascoffset", Nothing)],
                    OSC "/{asccolour}/scale"  $ ArgList [("ascscale", Nothing)],
