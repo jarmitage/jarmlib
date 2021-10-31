@@ -9,4 +9,5 @@
 :script lib/MIDI.hs
 :script lib/Misc.hs
 :script lib/Compatibility.hs
+-- :script lib/VST.hs
 :script lib/Scratch.hs

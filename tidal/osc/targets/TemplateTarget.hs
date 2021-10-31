@@ -1,11 +1,13 @@
 -- Target
 :{
-tmpTarget = Target {oName    = "Template",
-                   oAddress  = "127.0.0.1",
-                   oPort     = 8000,
-                   oLatency  = 0.2,
-                   oWindow   = Nothing,
-                   oSchedule = Pre BundleStamp
+tmpTarget = Target {oName     = "Template",
+                   oAddress   = "127.0.0.1",
+                   oHandshake = True, 
+                   oPort      = 8000, 
+                   oBusPort   = Just 8001, 
+                   oLatency   = 0.2,
+                   oWindow    = Nothing,
+                   oSchedule  = Pre BundleStamp
                   }
 :}
 

@@ -10,9 +10,11 @@ let oscBundle = [("delta", Just $ VF 0),
 -- :script osc/targets/BelaRes.hs
 -- :script osc/targets/Bitwig/Bitwig.hs
 -- :script osc/targets/CineVivo.hs
+-- :script osc/targets/FlowerTarget.hs
 -- :script osc/targets/LiveCore/LiveCore.hs
--- :script osc/targets/Vuo.hs
 -- :script osc/targets/VDMX.hs
+-- :script osc/targets/VST.hs
+-- :script osc/targets/Vuo.hs
 
 let sdOscMap = (superdirtTarget, [superdirtShape])
 
